@@ -13,7 +13,7 @@ struct header {
     unsigned char type: 4;
     unsigned char dup: 1;
     unsigned char qos: 2;
-    unsigned retain: 1;
+    unsigned char retain: 1;
     unsigned char size;
 };
 
