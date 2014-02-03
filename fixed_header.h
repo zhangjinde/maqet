@@ -7,8 +7,11 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 #define MAQET_FIXED_HEADER_H
 
 /*
-A fixed header.
+A fixed header structures and functions.
 */
+
+#include <stdio.h>
+
 struct fixed_header {
     unsigned char type: 4;
     unsigned char dup: 1;
@@ -16,6 +19,8 @@ struct fixed_header {
     unsigned char retain: 1;
     unsigned char size;
 };
+
+fixed_header* read(FILE* stream);
 
 #endif
 
