@@ -20,7 +20,7 @@ struct fixed_header {
     unsigned char size;
 };
 
-fixed_header* read(FILE* stream);
+struct fixed_header* fixed_header_read(FILE* stream);
 
 #endif
 
