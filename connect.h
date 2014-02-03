@@ -7,7 +7,7 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 #define MAQET_CONNECT_H
 
 /*
-A connect command.
+A connect message.
 */
 struct connect {
 };
