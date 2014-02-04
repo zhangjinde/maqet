@@ -11,16 +11,13 @@ A fixed header structures and functions.
 */
 
 #include <stdio.h>
+#include "message_type.h"
 
 struct fixed_header {
-    unsigned char type: 4;
-    unsigned char dup: 1;
-    unsigned char qos: 2;
-    unsigned char retain: 1;
-    unsigned char size;
+    enum message_type message_type;
 };
 
-struct fixed_header* fixed_header_read(FILE* stream);
+const struct fixed_header* fixed_header_read(FILE* stream);
 
 #endif
 
