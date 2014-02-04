@@ -15,6 +15,7 @@ struct fixed_header* fixed_header_read(FILE* stream) {
     assert(stream);
     assert(!ferror(stream));
     assert(!ftell(stream));
+
     return NULL;
 }
 
