@@ -16,6 +16,6 @@ void protocol_read(FILE* stream) {
     assert(!ferror(stream));
 
     if(ftell(stream)) rewind(stream);
-    struct fixed_header* fixed_header = fixed_header_read(stream);
+    const struct fixed_header* fixed_header = fixed_header_read(stream);
 }
 
