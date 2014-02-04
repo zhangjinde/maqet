@@ -11,9 +11,10 @@ The protocol implementation.
 #include "protocol.h"
 #include "fixed_header.h"
 
-void process(FILE* stream) {
+void protocol_read(FILE* stream) {
     assert(stream);
     assert(!ferror(stream));
+
     if(ftell(stream)) rewind(stream);
     struct fixed_header* fixed_header = fixed_header_read(stream);
 }
