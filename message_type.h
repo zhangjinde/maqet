@@ -9,7 +9,7 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 /*
 A message type.
 */
-enum type {
+enum message_type {
     connect = 1,
     connection_ack = 2,
     publish = 3,
