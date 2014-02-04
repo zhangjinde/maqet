@@ -3,8 +3,8 @@ Project maqet.
 Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 */
 
-#ifndef MAQET_TYPE_H
-#define MAQET_TYPE_H
+#ifndef MAQET_MESSAGE_TYPE_H
+#define MAQET_MESSAGE_TYPE_H
 
 /*
 A message type.
