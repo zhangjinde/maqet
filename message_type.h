@@ -10,6 +10,7 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 A message type.
 */
 enum message_type {
+    unknown = 0,
     connect = 1,
     connection_ack = 2,
     publish = 3,
