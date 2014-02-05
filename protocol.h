@@ -12,7 +12,7 @@ The protocol interface.
 
 #include <stdio.h>
 
-void protocol_read(FILE* stream);
+const struct message* protocol_message_read(FILE* stream);
 
 #endif
 
