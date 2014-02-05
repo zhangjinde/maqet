@@ -18,7 +18,7 @@ enum qos {
 
     //Assured delivery.
     exactly_once = 2
-);
+};
 
 #endif
 
