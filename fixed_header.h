@@ -20,6 +20,7 @@ struct fixed_header {
     bool dup;
     enum qos qos;
     bool retain;
+    unsigned char remaining_length;
 };
 
 void fixed_header_read(FILE* stream, struct fixed_header* fixed_header);
