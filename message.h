@@ -3,7 +3,7 @@ Project maqet.
 Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 */
 
-#ifndef MAQET_MESSAGE_H_
+#ifndef MAQET_MESSAGE_H
 #define MAQET_MESSAGE_H
 
 /*
