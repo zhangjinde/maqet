@@ -11,10 +11,15 @@ A fixed header structures and functions.
 */
 
 #include <stdio.h>
+#include <stdbool.h>
 #include "message_type.h"
+#include "qos.h"
 
 struct fixed_header {
     enum message_type message_type;
+    bool dup;
+    enum qos qos;
+    bool retain;
 };
 
 void fixed_header_read(FILE* stream, struct fixed_header* fixed_header);
