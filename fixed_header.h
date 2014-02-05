@@ -17,7 +17,7 @@ struct fixed_header {
     enum message_type message_type;
 };
 
-const struct fixed_header* fixed_header_read(FILE* stream);
+void fixed_header_read(FILE* stream, struct fixed_header* fixed_header);
 
 #endif
 
