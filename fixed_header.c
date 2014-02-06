@@ -28,6 +28,7 @@ void fixed_header_read(FILE* stream, struct fixed_header* fixed_header) {
     fixed_header->dup = buffer[0] >> 3 & 0x1;
     fixed_header->qos = buffer[0] >> 1 & 0x3;
     fixed_header->retain = buffer[0] & 0x1;
+    // TODO: implement the variable length encoding scheme.
     fixed_header->remaining_size = buffer[1];
 }
 

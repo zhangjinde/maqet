@@ -20,6 +20,11 @@ struct fixed_header {
     bool dup;
     enum qos qos;
     bool retain;
+
+    /*
+    Represents the number of bytes remaining within the current message, including data in
+    the variable header and the payload.
+    */
     unsigned char remaining_size;
 };
 
