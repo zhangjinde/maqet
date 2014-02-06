@@ -3,13 +3,13 @@ Project maqet.
 Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 */
 
-#ifndef MAQET_CONNECT_FLAGS_H
-#define MAQET_CONNECT_FLAGS_H
+#ifndef MAQET_CONNECT_FLAG_H
+#define MAQET_CONNECT_FLAG_H
 
 /*
-Connection flags.
+A connection flag enumeration.
 */
-enum connect_flags {
+enum connect_flag {
     username = 1,
     password = 1 << 1,
     will_retain = 1 << 2,
