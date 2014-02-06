@@ -12,6 +12,7 @@ Connection return codes.
 enum connect_status {
     accepted = 0,
     refused_version = 1
+    // TODO: complete the declaration.
 };
 
 #endif
