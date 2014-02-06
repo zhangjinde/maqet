@@ -20,9 +20,9 @@ void var_header_read(FILE* stream, struct var_header* var_header) {
     assert(!ftell(stream));
     assert(var_header);
 
-    char buffer[fixed_header_size];
+    char buffer[12];
     size_t bytes_read = fread(buffer, sizeof buffer[0], sizeof(buffer), stream);
     // TODO: complete the implementation.
-    var_header->protocol_name = buffer[0] >> 4 & 0xf;
+    //var_header->protocol_name = buffer[0] >> 4 & 0xf;
 }
 

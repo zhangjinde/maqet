@@ -10,6 +10,9 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 A variable header structires and functions.
 */
 
+#include "connect_flag.h"
+#include "connect_status.h"
+
 struct var_header {
     char* protocol_name;
     unsigned char protocol_version;
