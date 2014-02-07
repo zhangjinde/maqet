@@ -11,8 +11,9 @@ The protocol interface.
 */
 
 #include <stdio.h>
+#include "message.h"
 
-const struct message* protocol_message_read(FILE* stream);
+void protocol_read(FILE* stream, struct message* message);
 
 #endif
 
