@@ -10,8 +10,6 @@ The protocol implementation.
 #include <stdlib.h>
 #include <assert.h>
 #include "protocol.h"
-#include "fixed_header.h"
-#include "var_header.h"
 
 const struct message* protocol_message_read(FILE* stream) {
     assert(stream);
