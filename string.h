@@ -21,9 +21,9 @@ struct string {
     char* value;
 }
 
-void string_read(FILE* stream, const struct string* string)
+void string_decode(FILE* stream, const struct string* string)
 
-void string_write(FILE* stream, const char* value); 
+void string_encode(FILE* stream, const char* value); 
 
 #endif
 
