@@ -10,8 +10,10 @@ The protocol implementation.
 #include <stdlib.h>
 #include <assert.h>
 #include "protocol.h"
+#include "fixed_header.h"
+#include "var_header.h"
 
-const struct message* protocol_message_read(FILE* stream) {
+void protocol_message_read(FILE* stream, struct message* message) {
     assert(stream);
     assert(!ferror(stream));
 
@@ -23,6 +25,5 @@ const struct message* protocol_message_read(FILE* stream) {
     // TODO: etc...
     free(fixed_header);
     free(var_header);
-    return NULL;
 }
 
