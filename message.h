@@ -55,7 +55,7 @@ struct message {
 
     */
     struct payload* payload;
-}
+};
 
 /*
 Allocates a new message.
