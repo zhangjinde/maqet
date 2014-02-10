@@ -29,9 +29,9 @@ Deallocates a message.
 void message_free(struct message* message) {
     assert(message);
 
-    if(message->fixed_header) free(fixed_header);
-    if(message->var_header) free(var_header);
-    if(message->payload_header) free(payload_header);
+    if(message->fixed_header) free(message->fixed_header);
+    if(message->var_header) var_header_free(message->var_header);
+//    if(message->payload_header) free(message->payload_header);
     free(message);
 }
 
