@@ -7,7 +7,7 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 #define MAQET_STRING_H
 
 /*
-The MQTT string encoding routines's interface.
+The MQTT string decoding and encoding routines's interface.
 */
 
 #include <stdio.h>
@@ -19,10 +19,20 @@ In MQTT, strings are prefixed with two bytes to denote the length.
 struct string {
     unsigned short length;
     char* value;
-}
+};
 
-void string_read(FILE* stream, const struct string* string)
+/*
+Reads an MQTT string from the stream.
+@stream:
+@string:
+*/
+void string_read(FILE* stream, char* string);
 
+/*
+Write an MQTT string to the stream.
+@stream:
+@string:
+*/
 void string_write(FILE* stream, const char* value); 
 
 #endif
