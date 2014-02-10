@@ -11,7 +11,7 @@ The MQTT string decoding and encoding routines's implementation.
 #include <assert.h>
 #include "string.h"
 
-void string_read(FILE* stream, char* string) {
+const char* string_read(FILE* stream) {
     assert(stream);
     assert(!ferror(stream));
 
@@ -19,8 +19,9 @@ void string_read(FILE* stream, char* string) {
     // TODO: take care of the interrupts.
     size_t bytes_read = fread(length_buffer, sizeof length_buffer[0], sizeof(length_buffer), stream);
     unsigned short length = length_buffer[0] << 8 | length_buffer[1];
-    string = malloc(sizeof(char) * length + 1);
+    char* string = malloc(sizeof(char) * length);
     // TODO: take care of the interrupts.
     bytes_read = fread(string, sizeof string[0], sizeof(string), stream);
+    return string;
 }
 
