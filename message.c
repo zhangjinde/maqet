@@ -50,10 +50,10 @@ void message_read(FILE* stream, struct message* message) {
     assert(!message->payload);
     
     message->fixed_header = malloc(sizeof(struct fixed_header));
-    fixed_header_read(message->fixed_header);
+    fixed_header_read(stream, message->fixed_header);
     
     message->var_header = malloc(sizeof(struct var_header));
-    var_header_read(message->var_header);
+    var_header_read(stream, message->var_header);
 
     // TODO: need a paylaod?
     // message->payload = malloc(sizeof(struct payload));
