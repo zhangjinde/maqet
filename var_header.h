@@ -11,7 +11,7 @@ An MQTT variable header structures and functions.
 */
 
 #include <stdio.h>
-#include "connect_flag.h"
+#include "connect_attr.h"
 #include "connect_status.h"
 
 /*
@@ -20,9 +20,8 @@ An MQTT variable header structure.
 struct var_header {
     char* protocol_name;
     unsigned char protocol_version;
-    enum connect_flag connect_flag;
     unsigned short keep_alive;
-    enum connect_status connect_status;
+    struct connect_attr* connect_attr;
     char* topic_name;
     unsigned short message_id;
 };
