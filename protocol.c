@@ -4,7 +4,7 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 */
 
 /*
-The protocol implementation.
+An MQTT protocol implementation.
 */
 
 #include <stdlib.h>
@@ -16,12 +16,10 @@ The protocol implementation.
 void protocol_message_read(FILE* stream, struct message* message) {
     assert(stream);
     assert(!ferror(stream));
+    assert(message);
 
     if(ftell(stream)) rewind(stream);
-    message->fixed_header = malloc(sizeof(struct fixed_header));
-    fixed_header_read(stream, message->fixed_header);
-    message->var_header = malloc(sizeof(struct var_header));
-    var_header_read(stream, message->var_header);
+    message_read(stream, message);
     // TODO: etc...
 }
 
