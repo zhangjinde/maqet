@@ -7,7 +7,7 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 #define MAQET_VAR_HEADER_H
 
 /*
-A variable header structires and functions.
+An MQTT variable header structures and functions.
 */
 
 #include <stdio.h>
