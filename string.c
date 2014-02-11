@@ -21,7 +21,7 @@ char* string_read(FILE* stream) {
     unsigned short length = length_buffer[0] << 8 | length_buffer[1];
     char* string = malloc(sizeof(char) * length);
     // TODO: take care of the interrupts.
-    bytes_read = fread(string, sizeof string[0], sizeof(string), stream);
+    bytes_read = fread(string, sizeof string[0], length, stream);
     return string;
 }
 
