@@ -26,7 +26,7 @@ Reads an MQTT string from the stream.
 @stream:
 @string:
 */
-const char* string_read(FILE* stream);
+char* string_read(FILE* stream);
 
 /*
 Write an MQTT string to the stream.

@@ -11,7 +11,7 @@ The MQTT string decoding and encoding routines's implementation.
 #include <assert.h>
 #include "string.h"
 
-const char* string_read(FILE* stream) {
+char* string_read(FILE* stream) {
     assert(stream);
     assert(!ferror(stream));
 
