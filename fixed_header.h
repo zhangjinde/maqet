@@ -44,7 +44,7 @@ Deallocates a previously allocated fixed header.
 void fixed_header_free(struct fixed_header* fixed_header);
 
 /*
-Reads a fixed header from a stream.
+Reads a fixed header from the supplied stream.
 @stream:
 @fixed_header:
 */
