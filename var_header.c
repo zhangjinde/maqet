@@ -34,6 +34,7 @@ void var_header_read(FILE* stream, struct var_header* var_header) {
     assert(var_header);
 
     var_header->protocol_name = string_read(stream);
+    var_header->protocol_version = fgetc(stream); 
     // TODO: complete the implementation.
 }
 
