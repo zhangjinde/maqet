@@ -7,13 +7,13 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 #define MAQET_MESSAGE_H
 
 /*
-The message interface.
+An MQTT message interface's structures and functions.
 */
 
 #include <stdio.h>
 
 /*
-A structure representing an MQTT message.
+An MQTT message structure.
 
 The message header for each MQTT command message contains a fixed header. Some
 messages also require a variable header and a payload.
@@ -58,8 +58,8 @@ struct message {
 };
 
 /*
-Allocates a new message.
-On success, returns a new message, otherwise NULL.
+Allocates an MQTT message.
+On success, returns a pointer to a message, otherwise NULL.
 */
 struct message* message_new();
 
@@ -70,8 +70,8 @@ Deallocates a message.
 void message_free(struct message* message);
 
 /*
-Parses a stream and reads a message from a stream.
-@stream: a binary stream containing message byte sequence.
+Reads an MQTT message from the supplied stream.
+@stream: a binary stream containing an MQTT message byte sequence.
 @message: a previously allocated message.
 */
 void message_read(FILE* stream, struct message* message);

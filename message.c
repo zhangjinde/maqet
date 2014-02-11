@@ -4,7 +4,7 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 */
 
 /*
-The message implementation.
+An MQTT message interface implementation.
 */
 
 #include <stdio.h>
@@ -14,32 +14,18 @@ The message implementation.
 #include "fixed_header.h"
 #include "var_header.h"
 
-/*
-Allocates a new message.
-On success, returns a new message, otherwise NULL.
-*/
 struct message* message_new() {
     return malloc(sizeof(struct message));
 }
 
-/*
-Deallocates a message.
-@message: a previously allocated message.
-*/
 void message_free(struct message* message) {
     assert(message);
 
-    if(message->fixed_header) free(message->fixed_header);
-    if(message->var_header) var_header_free(message->var_header);
-//    if(message->payload_header) free(message->payload_header);
+    fixed_header_free(message->fixed_header);
+    var_header_free(message->var_header);
     free(message);
 }
 
-/*
-Parses a stream and reads a message from a stream.
-@stream: a binary stream containing message byte sequence.
-@message: a previously allocated message.
-*/
 void message_read(FILE* stream, struct message* message) {
     assert(stream);
     assert(!ferror(stream));
@@ -47,16 +33,11 @@ void message_read(FILE* stream, struct message* message) {
     assert(message);
     assert(!message->fixed_header);
     assert(!message->var_header);
-    assert(!message->payload);
     
-    message->fixed_header = malloc(sizeof(struct fixed_header));
+    message->fixed_header = fixed_header_new();
     fixed_header_read(stream, message->fixed_header);
     
-    message->var_header = malloc(sizeof(struct var_header));
+    message->var_header = var_header_new();
     var_header_read(stream, message->var_header);
-
-    // TODO: need a paylaod?
-    // message->payload = malloc(sizeof(struct payload));
-    // payload_read(message->payload);
 }
 
