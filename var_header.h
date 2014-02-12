@@ -20,8 +20,8 @@ An MQTT variable header structure.
 struct var_header {
     char* protocol_name;
     unsigned char protocol_version;
-    unsigned short keep_alive;
     struct connect_attr* connect_attr;
+    unsigned short keep_alive;
     char* topic_name;
     unsigned short message_id;
 };
