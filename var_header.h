@@ -22,6 +22,12 @@ struct var_header {
     unsigned char protocol_version;
     struct connect_attr* connect_attr;
     unsigned short keep_alive;
+
+    /*
+    The connect return code is sent in the variable header of a CONNACK
+    message.
+    */
+    enum connect_status connect_status;
     char* topic_name;
     unsigned short message_id;
 };
