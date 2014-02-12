@@ -16,6 +16,7 @@ An MQTT variable header implementation.
 
 //static const char* protocol_name = "MQIsdp";
 static const unsigned char protocol_version = 0x03;
+static const unsigned char keep_alive_size = 0x02;
 
 struct var_header* var_header_new() {
     return malloc(sizeof(struct var_header));
@@ -40,6 +41,9 @@ void var_header_read(FILE* stream, struct var_header* var_header) {
 
     var_header->connect_attr = connect_attr_new(); 
     connect_attr_read(stream, var_header->connect_attr);
+    
+    var_header->keep_alive = ((fgetc(stream) << 0x08) & 0x00ff) | (fgetc(stream) & 0xff00);
+    
     // TODO: complete the implementation.
 }
 
