@@ -42,7 +42,7 @@ void var_header_read(FILE* stream, struct var_header* var_header) {
     var_header->connect_attr = connect_attr_new(); 
     connect_attr_read(stream, var_header->connect_attr);
     
-    var_header->keep_alive = ((fgetc(stream) << 0x08) & 0x00ff) | (fgetc(stream) & 0xff00);
+    var_header->keep_alive = ((fgetc(stream) << 0x08) & 0xff00) | (fgetc(stream) & 0x00ff);
     
     // TODO: complete the implementation.
 }
