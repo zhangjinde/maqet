@@ -31,11 +31,11 @@ void connect_attr_read(FILE* stream, struct connect_attr* connect_attr) {
     assert(connect_attr);
 
     char octet = fgetc(stream);
-    connect_attr->username = octet >> 7 & 0x01;
-    connect_attr->password = octet >> 6 & 0x01;
-    connect_attr->retain = octet >> 5 & 0x01;
+    connect_attr->is_username = octet >> 7 & 0x01;
+    connect_attr->is_password = octet >> 6 & 0x01;
+    connect_attr->is_retain = octet >> 5 & 0x01;
     connect_attr->qos = octet >> 3 & 0x03;
-    connect_attr->will = octet >> 2 & 0x01;
-    connect_attr->clean_session = octet >> 1 & 0x01;
+    connect_attr->is_repeat = octet >> 2 & 0x01;
+    connect_attr->is_clean_session = octet >> 1 & 0x01;
 }
 
