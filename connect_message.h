@@ -16,6 +16,12 @@ The MQTT Connect Message interface's structures and functions.
 The MQTT Connect Message structure.
 */
 struct connect_message {
+    /* Uniquely identifies the client to the server. */
+    char* client_id;
+    char* topic_name;
+    char* message;
+    char* username;
+    char* password;
 };
 
 /*
