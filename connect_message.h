@@ -7,9 +7,10 @@ Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
 #define MAQET_CONNECT_H
 
 /*
-A connect message.
+The MQTT connect message.
 */
 struct connect {
+
 };
 
 #endif
