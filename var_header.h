@@ -16,11 +16,34 @@ An MQTT variable header structures and functions.
 
 /*
 An MQTT variable header structure.
+Some types of MQTT command messages also contain a variable header component.
+It resides between the fixed header and the payload.
 */
 struct var_header {
+    /*
+    The protocol name is present in the variable header of a MQTT CONNECT
+    message. This field is a UTF-encoded string that represents the protocol
+    name MQIsdp, capitalized as shown.
+    */
     char* protocol_name;
+
+    /*
+    The protocol version is present in the variable header of a CONNECT
+    message. The value of the Protocol version field for the current version of
+    the protocol, 3 (0x03).
+    */
     unsigned char protocol_version;
+
+    /* The connection attributes (MQTT Connect flags). */
     struct connect_attr* connect_attr;
+
+    /*
+    The Keep Alive timer, measured in seconds, defines the maximum time
+    interval between messages received from a client. It enables the server to
+    detect that the network connection to a client has dropped, without having
+    to wait for the long TCP/IP timeout. The client has a responsibility to
+    send a message within each Keep Alive time period.
+    */
     unsigned short keep_alive;
 
     /*
@@ -28,7 +51,19 @@ struct var_header {
     message.
     */
     enum connect_status connect_status;
+
+    /*
+    The topic name is the key that identifies the information channel to which
+    payload data is published. Subscribers use the key to identify the
+    information channels on which they want to receive published information.
+    */
     char* topic_name;
+
+    /*
+    The Message ID must be unique amongst the set of "in flight" messages in a
+    particular direction of communication. It typically increases by exactly
+    one from one message to the next, but is not required to do so.
+    */
     unsigned short message_id;
 };
 
