@@ -22,7 +22,7 @@ struct connect_ack_message {
 };
 
 /*
-Allocates a connection acknowledgment Message.
+Allocates a connection acknowledgment message.
 On success, returns a pointer to a connection acknowledgment message, otherwise
 NULL.
 */
@@ -35,12 +35,21 @@ Deallocates a connection acknowledgment message.
 void connect_ack_message_free(struct connect_ack_message* connect_ack_message);
 
 /*
-Reads a connection acknowledgment Message from the supplied stream.
+Reads a connection acknowledgment message from the supplied input stream.
 @stream: a binary stream containing a connection acknowledgment message byte
 sequence.
-@message: a previously allocated connect message.
+@message: a previously allocated connection acknowledgment message.
 */
 void connect_ack_message_read(
+    FILE* stream, 
+    struct connect_ack_message* connect_ack_message);
+
+/*
+Writes a connection acknowledgment message into the supplied output stream.
+@stream: a binary output stream.
+@message:
+*/
+void connect_ack_message_write(
     FILE* stream, 
     struct connect_ack_message* connect_ack_message);
 
