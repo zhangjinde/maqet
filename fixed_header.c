@@ -43,3 +43,7 @@ void fixed_header_read(FILE* stream, struct fixed_header* fixed_header) {
     fixed_header->remaining_size = buffer[1];
 }
 
+void fixed_header_write(FILE* stream, struct fixed_header* fixed_header) {
+    // etc.
+}
+
