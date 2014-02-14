@@ -40,7 +40,9 @@ Reads a connection acknowledgment Message from the supplied stream.
 sequence.
 @message: a previously allocated connect message.
 */
-void connect_ack_message_read(FILE* stream, struct connect_ack_message* connect_ack_message);
+void connect_ack_message_read(
+    FILE* stream, 
+    struct connect_ack_message* connect_ack_message);
 
 #endif
 
