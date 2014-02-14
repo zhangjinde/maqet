@@ -18,7 +18,7 @@ The message sent by the server in response to an MQTT Connection request from a
 client.
 */
 struct connect_ack_message {
-    char* message_id;
+    struct message* message;
 };
 
 /*
