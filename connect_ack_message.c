@@ -12,6 +12,8 @@ The MQTT Connection Acknowledgment message interface implementation.
 #include <assert.h>
 #include "connect_ack_message.h"
 #include "message.h"
+#include "fixed_header.h"
+#include "var_header.h"
 
 struct connect_ack_message* connect_ack_message_new() {
     return malloc(sizeof(struct connect_ack_message));
@@ -39,7 +41,7 @@ void connect_ack_message_write(
     assert(!ferror(stream));
     assert(connect_ack_message);
 
-    char* buffer = NULL;
-    fwrite(buffer, 0, 0, stream);
+    fixed_header_write(stream, connect_ack_message->message->fixed_header);
+    var_header_write(stream, connect_ack_message->message->var_header);
 }
 
