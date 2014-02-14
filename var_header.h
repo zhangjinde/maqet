@@ -86,5 +86,12 @@ Reads a variable header from a stream.
 */
 void var_header_read(FILE* stream, struct var_header* var_header);
 
+/*
+Writes a variable header into the supplied output stream.
+@stream: a binary output stream.
+@var_header:
+*/
+void var_header_write(FILE* stream, struct var_header* var_header);
+
 #endif
 
