@@ -19,9 +19,29 @@ An MQTT fixed header structures and functions.
 An MQTT fixed header structure.
 */
 struct fixed_header {
+    /* The MQTT message type enumeration. */
     enum message_type message_type;
+
+    /*
+    This flag is set when the client or server attempts to re-deliver a
+    PUBLISH, PUBREL, SUBSCRIBE or UNSUBSCRIBE message. This applies to messages
+    where the value of QoS is greater than zero (0), and an acknowledgment is
+    required. When the DUP bit is set, the variable header includes a Message
+    ID.
+    */
     bool dup;
+
+    /*
+    This flag indicates the level of assurance for delivery of a PUBLISH
+    message.
+    */
     enum qos qos;
+
+    /*
+    This flag is only used on PUBLISH messages. When a client sends a PUBLISH
+    to a server, if the Retain flag is set (1), the server should hold on to
+    the message after it has been delivered to the current subscribers.
+    */
     bool retain;
 
     /*
@@ -49,6 +69,13 @@ Reads a fixed header from the supplied stream.
 @fixed_header:
 */
 void fixed_header_read(FILE* stream, struct fixed_header* fixed_header);
+
+/*
+Writes a fixed header into the supplied output stream.
+@stream: a binary output stream.
+@fixed_header:
+*/
+void fixed_header_write(FILE* stream, struct fixed_header* fixed_header);
 
 #endif
 
