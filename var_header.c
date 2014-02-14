@@ -47,3 +47,7 @@ void var_header_read(FILE* stream, struct var_header* var_header) {
     // TODO: complete the implementation.
 }
 
+void var_header_write(FILE* stream, struct var_header* var_header) {
+    // etc.
+}
+
