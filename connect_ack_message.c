@@ -1,11 +1,9 @@
 /*
-Project maqet.
-Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>
+* Project maqet.
+* Copyright (C) 2014, Roman Fakhrazeyev, <roman.fakhrazeyev@two718.com>.
 */
 
-/*
-The MQTT Connection Acknowledgment message interface implementation.
-*/
+/* The MQTT Connection Acknowledgment message interface implementation. */
 
 #include <stdio.h>
 #include <stdlib.h>
